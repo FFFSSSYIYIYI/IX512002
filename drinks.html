@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				font-size: 100%;
+				font-family: Georgia, serif;
+			}
+			
+			body {
+				background: hsl(0, 0%, 82%);
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px;
+				box-sizing: border-box;
+			}
+			.topnav{
+				overflow: hidden;
+				position: relative;
+			}
+			.topnav .nav-btn{
+				overflow: hidden;
+				margin-top: 50px;
+				margin-left: 0px;
+				float: left;
+				border: 2px solid #2C2C2C;
+				border-radius: 5px;
+				box-sizing: border-box;
+			}
+			.topnav .logo{
+				width: 150px;
+				height: 150px;
+				display: block;
+				float: left;
+			}
+			.topnav a {
+				background-color: rgb(54, 136, 0);
+				color: #FFFFFF;
+				float: left;
+				display: block;
+				
+				text-align: center;
+				padding: 14px 20px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+			
+			.topnav a:hover {
+				background-color: #ddd;
+				color: #2c2c2c;
+				color: black;
+			}
+			
+			.topnav a.active {
+				background-color: #95BCF2;
+				color: white;
+			}
+			
+			.body{
+				width: 100%;
+				margin: 20px auto;
+			}
+			.body .body-title{
+				width: 100%;
+				font-size: 50px;
+				text-align: center;
+				font-weight: bold;
+			}
+			.body .body-list{
+				width: 100%;
+				overflow: hidden;
+			}
+			.body .body-list .item{
+				width: 25%;
+				float: left;
+				padding: 10px 10px 40px 10px;
+				box-sizing: border-box;
+			}
+			.body .body-list .item .img{
+				width: 200px;
+				height: 200px;
+				display: block;
+				margin: 0 auto;
+			}
+			.body .body-list .item p{
+				font-size: 28px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.body .body-list .item p.name{
+				height: 60px;
+			}
+			.body .body-list .item p.price{
+				height: 30px;
+			}
+			.body .body-list .item .btn{
+				width: 100%;
+			}
+			.body .body-list .item .goods-count{
+				width: 80%;
+				overflow: hidden;
+				line-height: 40px;
+				height: 40px;
+				background: #FFFFFF;
+				margin: 0 auto 10px;
+				border-radius: 10px;
+			}
+			.body .body-list .item .goods-count .count{
+				float: left;
+				line-height: 40px;
+				height: 40px;
+				width: 50px;
+				text-align: center;
+				font-size: 28px;
+			}
+			.body .body-list .item .goods-count .sub{
+				float: right;
+				line-height: 40px;
+				width: 40px;
+				height: 40px;
+				font-size: 28px;
+				font-weight: bold;
+				text-align: center;
+				cursor: pointer;
+			}
+			.body .body-list .item .goods-count .add{
+				float: right;
+				line-height: 40px;
+				width: 40px;
+				height: 40px;
+				font-size: 28px;
+				font-weight: bold;
+				text-align: center;
+				cursor: pointer;
+			}
+			.body .body-list .item .btn button{
+				width: 160px;
+				height: 40px;
+				line-height: 40px;
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				background: rgb(54, 136, 0);
+				border-radius: 10px;
+				font-size: 24px;
+				color: #FFFFFF;
+			}
+			.cart{
+				position: absolute;
+				right: 0;
+				top: 10px;
+				width: 180px;
+				padding: 5px;
+				box-sizing: border-box;
+				background: rgb(54, 136, 0);
+				text-align: center;
+				margin-top: 40px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.cart span{
+				line-height: 30px;
+				height: 30px;
+				vertical-align: bottom;
+				font-size: 20px;
+				color: #FFFFFF;
+			}
+			.cart img{
+				width: 30px;
+				height: 30px;
+				ertical-align: bottom;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="topnav">
+				<img class="logo" src="icon.png" />
+				<div class="nav-btn">
+					<a href="index.html">Home</a>
+					<a href="pizzas.html">Pizzas</a>
+					<a href="side.html">Sides</a>
+					<a href="drinks.html" class="active">Drinks</a>
+					<a href="login.html">Login</a>
+					<a href="dessert.html">Dessert</a>
+					<a href="cart.html">Shopping cart</a>
+				</div>
+				<div class="cart" id="cart">
+					<span id="cartMoneys">$00.00</span>
+					<img src="icon-cart.png" />
+				</div>
+			</div>
+			<div class="body">
+				<div class="body-title">
+					Drinks
+				</div>
+				<div class="body-list">
+					<div class="item">
+						<img class="img" src="coca.jpg" />
+						<p class="name" data-index='0'>coca cola 600ml</p>
+						<p class="price" data-index='0'>$2.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='0'>1</div>
+							<div class="add" data-index='0'>+</div>
+							<div class="sub" data-index='0'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='0'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="kiwi.jpg" />
+						<p class="name" data-index='1'>Kiwi Blue Still Water 1.5L</p>
+						<p class="price" data-index='1'>$2.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='1'>1</div>
+							<div class="add" data-index='1'>+</div>
+							<div class="sub" data-index='1'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='1'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="coca1.jpg" />
+						<p class="name" data-index='2'>Coca Cola 330ml can</p>
+						<p class="price" data-index='2'>$1.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='2'>1</div>
+							<div class="add" data-index='2'>+</div>
+							<div class="sub" data-index='2'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='2'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="sprite.png" />
+						<p class="name" data-index='3'>Sprite 600ml</p>
+						<p class="price" data-index='3'>$2.99</p>
+						<div class="goods-count" data-index='3'>
+							<div class="count" data-index='3'>1</div>
+							<div class="add" data-index='3'>+</div>
+							<div class="sub" data-index='3'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='3'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="keri.jpg" />
+						<p class="name" data-index='4'>Keri Orange Juice 350ml</p>
+						<p class="price" data-index='4'>$3.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='4'>1</div>
+							<div class="add" data-index='4'>+</div>
+							<div class="sub" data-index='4'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='4'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="fanta.jpg" />
+						<p class="name" data-index='5'>Fanta 330ml Can</p>
+						<p class="price" data-index='5'>$2.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='5'>1</div>
+							<div class="add" data-index='5'>+</div>
+							<div class="sub" data-index='5'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='5'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="lemon.jpg" />
+						<p class="name" data-index='6'>Lemon and Paeroa 1.5L</p>
+						<p class="price" data-index='6'>$3.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='6'>1</div>
+							<div class="add" data-index='6'>+</div>
+							<div class="sub" data-index='6'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='6'>add cart</button>
+						</div>
+					</div>
+					<div class="item">
+						<img class="img" src="fanta1.jpg" />
+						<p class="name" data-index='7'>Fanta 1.5L</p>
+						<p class="price" data-index='7'>$3.99</p>
+						<div class="goods-count">
+							<div class="count" data-index='7'>1</div>
+							<div class="add" data-index='7'>+</div>
+							<div class="sub" data-index='7'>-</div>
+						</div>
+						<div class="btn">
+							<button class="add-cart" data-index='7'>add cart</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="load_cart.js" ></script>
+		<script src="cart.js"></script>
+		<script>
+			if(!localStorage.getItem('user')){
+				window.location.href = "index.html";
+			}
+		</script>
+
+<div class="navbar2">
+    <a onclick="document.location='checkout.html'" class="active">Check Out</a>
+	
+	</div>
+	</body>
+
+</html>

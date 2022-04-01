@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Project</title>
+		<link rel="stylesheet" href="project css.css">
+
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="topnav">
+				<img class="logo" src="logo.png">
+				<div class="nav-btn">
+					<a href="index.html" class="active">Home</a>
+					<a href="pizzas.html">Pizzas</a>
+					<a href="side.html">Sides</a>
+					<a href="drinks.html">Drinks</a>
+					<a href="login.html">Login</a>
+					<a href="dessert.html">Dessert</a>
+					<a href="cart.html">Shopping cart</a>
+				</div>
+				<div class="cart" id="cart">
+					<span id="cartMoneys">$00.00</span>
+					<img src="icon-cart.png" />
+				</div>
+			</div>
+
+			<div class="center">
+
+				<img src="pizza.png" width="250" height="300" style="float: right;">
+				<h1>Pizza Express</h1>
+				<p>The best pizza comes from us.</p>
+				<button class="button" onclick="document.location='login.html'">Login & Order Now!</button>
+			</div>
+		</div>
+		<script src="load_cart.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				font-size: 100%;
+				font-family: Georgia, serif;
+			}
+			
+			body {
+				background: hsl(0, 0%, 82%);
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px;
+				box-sizing: border-box;
+			}
+			.topnav{
+				overflow: hidden;
+				position: relative;
+			}
+			.topnav .nav-btn{
+				overflow: hidden;
+				margin-top: 50px;
+				margin-left: 0px;
+				float: left;
+				border: 2px solid #2C2C2C;
+				border-radius: 5px;
+				box-sizing: border-box;
+			}
+			.topnav .logo{
+				width: 150px;
+				height: 150px;
+				display: block;
+				float: left;
+			}
+			.topnav a {
+				background-color: rgb(54, 136, 0);
+				color: #FFFFFF;
+				float: left;
+				display: block;
+				
+				text-align: center;
+				padding: 14px 20px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+			
+			.topnav a:hover {
+				background-color: #ddd;
+				color: #2c2c2c;
+				color: black;
+			}
+			
+			.topnav a.active {
+				background-color: #95BCF2;
+				color: white;
+			}
+			
+			.login-form{
+				width: 360px;
+				margin: 50px auto;
+			}
+			.login-form .login-title{
+				text-align: center;
+				font-size: 50px;
+			}
+			.login-form .login-main{
+				width: 100%;
+			}
+			.login-form .login-main .line{
+				width: 100%;
+				margin-top: 50px;
+			}
+			.login-form .login-main .line input{
+				display: block;
+				width: 100%;
+				border-radius: 5px;
+				line-height: 50px;
+				height: 50px;
+				padding: 0 10px;
+				font-size: 26px;
+			}
+			.login-form .login-btn{
+				width: 100%;
+				text-align: center;
+				margin-top: 30px;
+			}
+			.login-form .login-btn button.btn{
+				width: 140px;
+				line-height: 40px;
+				height: 40px;
+				text-align: center;
+				background: #009E0F;
+				color: #FFFFFF;
+				outline: none;
+				border-radius: 5px;
+			}
+			
+			.cart{
+				position: absolute;
+				right: 0;
+				top: 10px;
+				width: 180px;
+				padding: 5px;
+				box-sizing: border-box;
+				background: rgb(54, 136, 0);
+				text-align: center;
+				margin-top: 40px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.cart span{
+				line-height: 30px;
+				height: 30px;
+				vertical-align: bottom;
+				font-size: 20px;
+				color: #FFFFFF;
+			}
+			.cart img{
+				width: 30px;
+				height: 30px;
+				ertical-align: bottom;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="topnav">
+				<img class="logo" src="icon.png" />
+				<div class="nav-btn">
+					<a href="index.html">Home</a>
+					<a href="pizzas.html">Pizzas</a>
+					<a href="side.html">Sides</a>
+					<a href="drinks.html">Drinks</a>
+					<a href="login.html" class="active">Login</a>
+					<a href="dessert.html">Dessert</a>
+					<a href="cart.html">Shopping cart</a>
+				</div>
+				<div class="cart" id="cart">
+					<span id="cartMoneys">$00.00</span>
+					<img src="icon-cart.png" />
+				</div>
+			</div>
+			<div class="login-form">
+				<div class="login-title">Login</div>
+				<div class="login-main">
+					<div class="line">
+						<input type="text" id="username" placeholder="user name" />
+					</div>
+					<div class="line">
+						<input type="password" id="password" placeholder="password" />
+					</div>
+				</div>
+				<div class="login-btn">
+					<button class="btn" id="login">Login</button>
+				</div>
+			</div>
+		</div>
+		<script src="load_cart.js"></script>
+		<script>
+			document.getElementById('login').onclick = function(){
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				if(!username){
+					alert('Please Enter Username');
+					return;
+				}
+				if(!password){
+					alert('Please Enter Password');
+					return;
+				}
+				if(username == 'user' && password == 'P@ssw0rd123'){
+					localStorage.clear();
+					localStorage.setItem('user',username);
+					window.location.href = "drinks.html";
+				}else{
+					alert('Username Or Password Error');
+				}
+			};
+		</script>
+	</body>
+
+</html>
